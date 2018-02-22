@@ -9,8 +9,6 @@ Author URI: http://shramee.me/
 @developer shramee <shramee.srivastav@gmail.com>
 */
 
-/** Plugin admin class */
-require 'inc/class-admin.php';
 /** Plugin public class */
 require 'inc/class-public.php';
 
@@ -22,7 +20,7 @@ require 'inc/class-public.php';
  * @static string $path Plugin root dir path
  * @static string $version Plugin version
  */
-class Lesson_Template_LLMS{
+class Lesson_Template_LLMS {
 
 	/** @var Lesson_Template_LLMS Instance */
 	private static $_instance = null;
@@ -42,10 +40,7 @@ class Lesson_Template_LLMS{
 	/** @var string Plugin directory path */
 	public static $path;
 
-	/** @var My_Plugin_Admin Instance */
-	public $admin;
-
-	/** @var My_Plugin_Public Instance */
+	/** @var Lesson_Template_LLMS_Public Instance */
 	public $public;
 
 	/**
@@ -73,33 +68,19 @@ class Lesson_Template_LLMS{
 		self::$path    = plugin_dir_path( $file );
 		self::$version = '1.0.0';
 
-		$this->_admin(); //Initiate admin
-		$this->_public(); //Initiate public
-
-	}
-
-	/**
-	 * Initiates admin class and adds admin hooks
-	 */
-	private function _admin() {
-		//Instantiating admin class
-		$this->admin = My_Plugin_Admin::instance();
-
-		//Enqueue admin end JS and CSS
-		add_action( 'admin_enqueue_scripts',	array( $this->admin, 'enqueue' ) );
+		$this->_init(); //Initiate public
 
 	}
 
 	/**
 	 * Initiates public class and adds public hooks
 	 */
-	private function _public() {
+	private function _init() {
 		//Instantiating public class
-		$this->public = My_Plugin_Public::instance();
+		$this->public = Lesson_Template_LLMS_Public::instance();
 
 		//Enqueue front end JS and CSS
-		add_action( 'wp_enqueue_scripts',	array( $this->public, 'enqueue' ) );
-
+		add_action( 'wp_enqueue_scripts',	array( $this->public, 'init' ), 99 );
 	}
 }
 

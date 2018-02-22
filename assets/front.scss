@@ -1,0 +1,231 @@
+/**
+ * Plugin front end styles
+ *
+ * @package Lesson_Template_LLMS
+ * @version 1.0.0
+ */
+.single-lesson {
+	#lesson-primary {
+		padding-right: 50px;
+	}
+}
+
+#lesson {
+	.llms-widget-syllabus {
+		overflow: hidden;
+		ul {
+			margin: 0;
+		}
+		.section-header {
+			text-align: center;
+		}
+	}
+	.center-video {
+		padding-top: 56.25%;
+		position: relative;
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+	}
+	.llms-lesson-button-wrapper {
+		float: left;
+		width: auto;
+	}
+
+	.llms-lesson-preview,
+	.index,
+	.button,
+	.llms-video-wrapper,
+	.progress-bar,
+	h2.lesson-title {
+		border-radius: 7px;
+		border: 2px solid #555;
+		overflow: hidden;
+	}
+	.button,
+	h2.lesson-title {
+		padding: 12px 23px 11px;
+		margin: 0;
+		text-transform: uppercase;
+		text-align: center;
+		font: 400 16px/20px futura, sans-serif;
+		color: #555;
+	}
+
+	.index-tabs {
+		display: flex;
+		justify-content: stretch;
+		.button {
+			flex: 1;
+			padding: 12px 11px 11px;
+			border-radius: 0;
+			border: none;
+			border-bottom: 2px solid #555;
+			&.active {
+				border-bottom: none;
+				background: #eee;
+			}
+			&:last-child {
+				border-left: 2px solid #555;
+			}
+		}
+	}
+
+	.index-tabs-content {
+		padding-bottom: 98.17%;
+		position: relative;
+		border-radius: 0 0 7px 7px;
+		background: #eee;
+		*::-webkit-scrollbar {
+			border: none;
+			box-shadow: inset 0 0 0 6px #eee;
+			background: #999;
+		}
+
+		*::-webkit-scrollbar-thumb {
+			width: 14px;
+			height: 14px;
+			border-radius: 10px;
+			-webkit-box-shadow: none;
+			border: 2px solid #bbb;
+			background-color: #fff;
+		}
+
+		.bottom-fix {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			border-top: 2px solid #555;
+			border-radius: 0;
+			background: #fff;
+		}
+	}
+
+	.index-tab-content {
+		padding: 16px;
+		position: absolute;
+		top: 7px;
+		left: 7px;
+		right: 7px;
+		bottom: 52px;
+		box-sizing: border-box;
+		overflow: auto;
+		background: #eee;
+		&.active-tab {
+			z-index: 5;
+		}
+	}
+
+	.llms-lesson-preview {
+		.llms-lesson-link {
+			box-shadow: none;
+			width: auto;
+		}
+		border-color: #999;
+		width: auto;
+		display: block;
+		&:first-of-type {
+			margin-top: 0;
+		}
+	}
+
+	.llms-section {
+		border-bottom: none;
+		&:not(:last-of-type) {
+			margin-bottom: 16px;
+		}
+	}
+
+	.section-title {
+		background: #eee;
+		padding: 0 16px;
+		margin-bottom: 16px;
+	}
+
+	#llms-section-lessons {
+		.llms-lesson-complete,
+		h6, h5 {
+			margin: 0;
+		}
+
+		.llms-lesson-complete > .fa {
+			display: block;
+			font-size: 70px;
+			float: left;
+			margin-right: 16px;
+		}
+	}
+
+	#wixbu-lesson-navigation {
+		float: right;
+		.button {
+			border-radius: 0;
+			&:not(:last-of-type) {
+				border-right: none;
+			}
+			&:last-of-type {
+				border-top-right-radius: 7px;
+				border-bottom-right-radius: 7px;
+			}
+			&:first-of-type {
+				border-top-left-radius: 7px;
+				border-bottom-left-radius: 7px;
+			}
+		}
+	}
+
+	h2.lesson-title {
+		border-radius: 7px 7px 0 0;
+	}
+
+	.llms-form-field {
+		padding: 0;
+	}
+
+	.index,
+	.llms-video-wrapper {
+		margin-bottom: 35px;
+	}
+
+	.llms-video-wrapper {
+		border-top: none;
+		border-radius: 0 0 7px 7px;
+	}
+
+	.bottom-fix {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		border: none;
+	}
+
+	#llms-course-progress {
+		width: 100%;
+		text-align: left;
+		box-sizing: border-box;
+		height: auto;
+		display: flex;
+		flex-direction: row;
+		.progress-bar {
+			flex: 1;
+			display: flex;
+			margin: 0 11px;
+			border-radius: 9px;
+		}
+		.progress-bar-complete {
+			display: block;
+			border-radius: 9px 0 0 9px;
+			border: 1px solid #fff;
+			box-sizing: border-box;
+			&.almost-done {
+				border-radius: 9px;
+			}
+		}
+	}
+}
