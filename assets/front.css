@@ -40,7 +40,7 @@
   margin: 0;
   text-transform: uppercase;
   text-align: center;
-  font: 400 16px/20px futura, sans-serif;
+  font: 400 15px/20px futura, sans-serif;
   color: #555; }
 #lesson .index-tabs {
   display: flex;
@@ -156,7 +156,8 @@
     flex: 1;
     display: flex;
     margin: 0 11px;
-    border-radius: 9px; }
+    border-radius: 9px;
+    border-color: #999; }
   #lesson #llms-course-progress .progress-bar-complete {
     display: block;
     border-radius: 9px 0 0 9px;

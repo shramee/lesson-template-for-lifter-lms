@@ -81,6 +81,7 @@ class Lesson_Template_LLMS {
 
 		//Enqueue front end JS and CSS
 		add_action( 'wp_enqueue_scripts',	array( $this->public, 'init' ), 99 );
+		add_filter( 'llms_widget_syllabus_section_title', [ $this->public, 'syllabus_section_link' ], 10, 2 );
 	}
 }
 
